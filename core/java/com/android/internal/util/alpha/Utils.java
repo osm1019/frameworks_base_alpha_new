@@ -16,6 +16,11 @@
 
 package com.android.internal.util.alpha;
 
+
+import android.app.ActivityManager;
+import android.app.role.RoleManager;
+import android.app.ActivityThread;
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
@@ -29,6 +34,7 @@ import android.os.SystemClock;
 import android.os.SystemProperties;
 
 import com.android.internal.statusbar.IStatusBarService;
+import com.android.internal.util.CollectionUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -110,5 +116,35 @@ public class Utils {
             mBarService.restartSystemUI();
         } catch (RemoteException e) {
         }
+    }
+
+    public static boolean ambientAod() {
+        try {
+            Context ctx = ActivityThread.currentApplication() != null
+                    ? ActivityThread.currentApplication().getApplicationContext()
+                    : null;
+            if (ctx == null) return false;
+            return Settings.Secure.getIntForUser(ctx.getContentResolver(),
+                Settings.Secure.DOZE_ALWAYS_ON_WALLPAPER_ENABLED,
+                ctx.getResources().getBoolean(
+                    com.android.internal.R.bool.config_dozeSupportsAodWallpaper) ? 1 : 0,
+                UserHandle.USER_CURRENT) == 1;
+        } catch (Throwable t) {
+            return false;
+        }
+    }
+
+    public static String getDefaultLauncher(Context context) {
+        final RoleManager roleManager = context.getSystemService(RoleManager.class);
+        final String packageName = CollectionUtils.firstOrNull(
+                roleManager.getRoleHolders(RoleManager.ROLE_HOME));
+        return packageName != null ? packageName : "";
+    }
+
+    public static void forceStopDefaultLauncher(Context context) {
+        final ActivityManager activityManager = context.getSystemService(ActivityManager.class);
+        try {
+            activityManager.forceStopPackageAsUser(getDefaultLauncher(context), UserHandle.USER_CURRENT);
+        } catch (Exception ignored) {}
     }
 }

@@ -333,10 +333,13 @@ import java.util.TreeSet;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Future;
 
+
 import org.lineageos.server.LineageGlobalActionsService;
 import org.lineageos.server.LineageHardwareService;
 import org.lineageos.server.display.LiveDisplayService;
 import org.lineageos.server.health.HealthInterfaceService;
+
+import com.android.server.crDroidSystemExService;
 
 /**
  * Entry point to {@code system_server}.
@@ -1740,6 +1743,10 @@ public final class SystemServer implements Dumpable {
 
             t.traceBegin("WindowManagerServiceOnInitReady");
             wm.onInitReady();
+            t.traceEnd();
+
+            t.traceBegin("StartcrDroidSystemExService");
+            mSystemServiceManager.startService(crDroidSystemExService.class);
             t.traceEnd();
 
             // Start receiving calls from SensorManager services. Start in a separate thread

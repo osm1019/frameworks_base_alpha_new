@@ -136,3 +136,6 @@
 
 # SDK
 -keep,allowoptimization,allowaccessmodification class vendor.lineage.** { *; }
+
+# crDroid
+-keep,allowoptimization,allowaccessmodification class com.android.server.crDroidSystemExService { *; }
