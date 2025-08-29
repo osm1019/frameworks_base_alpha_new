@@ -6,7 +6,7 @@
  *
  */
 
-package com.android.server.crdroid;
+package com.android.server.alpha;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
@@ -21,7 +21,7 @@ import android.util.AtomicFile;
 import android.util.Log;
 
 import com.android.server.SystemService;
-import com.android.internal.util.crdroid.Utils;
+import com.android.internal.util.alpha.Utils;
 
 import java.io.BufferedReader;
 import java.io.File;

@@ -3,7 +3,7 @@
  * SPDX-FileCopyrightText: 2025 Neoteric OS
  * SPDX-License-Identifier: Apache-2.0
  */
-package com.android.internal.util.crdroid;
+package com.android.internal.util.alpha;
 
 import android.hardware.security.keymint.Algorithm;
 import android.hardware.security.keymint.KeyParameter;
@@ -17,7 +17,7 @@ import android.system.keystore2.KeyEntryResponse;
 import android.system.keystore2.KeyMetadata;
 import android.util.Log;
 
-import com.android.internal.util.crdroid.KeyboxChainGenerator.KeyGenParameters;
+import com.android.internal.util.alpha.KeyboxChainGenerator.KeyGenParameters;
 
 import java.security.cert.Certificate;
 import java.util.ArrayList;
