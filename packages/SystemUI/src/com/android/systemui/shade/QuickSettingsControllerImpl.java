@@ -37,6 +37,7 @@ import android.content.res.Resources;
 import android.graphics.Insets;
 import android.graphics.Rect;
 import android.graphics.Region;
+import android.provider.Settings;
 import android.util.IndentingPrintWriter;
 import android.util.Log;
 import android.util.MathUtils;
@@ -105,8 +106,6 @@ import com.android.systemui.util.LargeScreenUtils;
 import com.android.systemui.util.kotlin.JavaAdapter;
 import com.android.systemui.utils.windowmanager.WindowManagerProvider;
 
-import lineageos.providers.LineageSettings;
-
 import dalvik.annotation.optimization.NeverCompile;
 
 import dagger.Lazy;
@@ -126,7 +125,7 @@ public class QuickSettingsControllerImpl implements QuickSettingsController, Dum
     public static final int SHADE_BACK_ANIM_SCALE_MULTIPLIER = 100;
 
     private static final String STATUS_BAR_QUICK_QS_PULLDOWN =
-            "lineagesystem:" + LineageSettings.System.STATUS_BAR_QUICK_QS_PULLDOWN;
+            "system:" + Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN;
 
     private QS mQs;
     private final Lazy<NotificationPanelViewController> mPanelViewControllerLazy;
