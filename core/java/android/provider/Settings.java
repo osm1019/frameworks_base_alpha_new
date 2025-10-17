@@ -14716,11 +14716,6 @@ public final class Settings {
          */
         public static final String SHOW_CLIPBOARD_OVERLAY = "show_clipboard_overlay";
 
-        /**
-         * Whether to pulse ambient on new music tracks
-         * @hide
-         */
-        public static final String PULSE_ON_NEW_TRACKS = "pulse_on_new_tracks";
 
         /**
          * Whether to enable DOZE only when charging
@@ -14728,17 +14723,6 @@ public final class Settings {
          */
         public static final String DOZE_ON_CHARGE = "doze_on_charge";
 
-        /**
-         * Pulse ambient music visualizer
-         * @hide
-         */
-        public static final String AMBIENT_PULSE_ENABLED = "ambient_pulse_enabled";
-
-        /**
-         * Pulse lockscreen music visualizer
-         * @hide
-         */
-        public static final String LOCKSCREEN_PULSE_ENABLED = "lockscreen_pulse_enabled";
 
         /**
          * Pulse music visualizer color type
