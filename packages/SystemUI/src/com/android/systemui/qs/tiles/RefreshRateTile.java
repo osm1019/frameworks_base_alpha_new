@@ -20,7 +20,7 @@ import android.service.quicksettings.Tile;
 import androidx.annotation.Nullable;
 
 import com.android.internal.logging.MetricsLogger;
-import com.android.internal.util.crdroid.DisplayRefreshRateHelper;
+import com.android.internal.util.alpha.DisplayRefreshRateHelper;
 
 import com.android.systemui.animation.Expandable;
 import com.android.systemui.dagger.qualifiers.Background;

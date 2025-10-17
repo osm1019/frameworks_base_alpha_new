@@ -26,8 +26,8 @@ import android.os.Handler;
 import android.os.PowerManager;
 import android.os.UserHandle;
 
-import com.android.internal.util.crdroid.FullscreenTaskStackChangeListener;
-import com.android.internal.util.crdroid.Utils;
+import com.android.internal.util.alpha.FullscreenTaskStackChangeListener;
+import com.android.internal.util.alpha.Utils;
 
 import com.android.server.LocalServices;
 import com.android.server.ServiceThread;

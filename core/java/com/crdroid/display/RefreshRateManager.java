@@ -10,8 +10,8 @@ import android.content.Context;
 import android.os.RemoteException;
 import android.util.Slog;
 
-import com.android.internal.util.crdroid.DisplayRefreshRateHelper;
-import com.android.internal.util.crdroid.Utils;
+import com.android.internal.util.alpha.DisplayRefreshRateHelper;
+import com.android.internal.util.alpha.Utils;
 
 /** @hide */
 @SystemService(Context.REFRESH_RATE_MANAGER_SERVICE)

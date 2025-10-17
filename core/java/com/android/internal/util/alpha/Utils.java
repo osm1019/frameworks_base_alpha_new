@@ -21,6 +21,7 @@ import android.app.ActivityManager;
 import android.app.role.RoleManager;
 import android.app.ActivityThread;
 
+import android.app.ActivityThread;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
@@ -32,6 +33,8 @@ import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.os.SystemClock;
 import android.os.SystemProperties;
+import android.os.UserHandle;
+import android.provider.Settings;
 
 import com.android.internal.statusbar.IStatusBarService;
 import com.android.internal.util.CollectionUtils;
@@ -133,6 +136,7 @@ public class Utils {
             return false;
         }
     }
+
 
     public static String getDefaultLauncher(Context context) {
         final RoleManager roleManager = context.getSystemService(RoleManager.class);

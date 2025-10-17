@@ -20,7 +20,7 @@ import android.text.TextUtils;
 import android.util.ArrayMap;
 import android.util.Slog;
 
-import com.android.internal.util.crdroid.DisplayRefreshRateHelper;
+import com.android.internal.util.alpha.DisplayRefreshRateHelper;
 import com.android.server.ServiceThread;
 
 import java.util.ArrayList;
