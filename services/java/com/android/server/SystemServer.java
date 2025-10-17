@@ -339,7 +339,7 @@ import org.lineageos.server.LineageHardwareService;
 import org.lineageos.server.display.LiveDisplayService;
 import org.lineageos.server.health.HealthInterfaceService;
 
-import com.android.server.crDroidSystemExService;
+import com.android.server.AlphaSystemExService;
 
 /**
  * Entry point to {@code system_server}.
@@ -1745,8 +1745,8 @@ public final class SystemServer implements Dumpable {
             wm.onInitReady();
             t.traceEnd();
 
-            t.traceBegin("StartcrDroidSystemExService");
-            mSystemServiceManager.startService(crDroidSystemExService.class);
+            t.traceBegin("StartAlphaSystemExService");
+            mSystemServiceManager.startService(AlphaSystemExService.class);
             t.traceEnd();
 
             // Start receiving calls from SensorManager services. Start in a separate thread

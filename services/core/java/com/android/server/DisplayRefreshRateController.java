@@ -27,7 +27,7 @@ import java.util.ArrayList;
 
 import com.crdroid.display.IRefreshRateListener;
 import com.crdroid.display.IRefreshRateManagerService;
-import com.android.server.crDroidSystemExService;
+import com.android.server.AlphaSystemExService;
 
 public final class DisplayRefreshRateController {
 
@@ -39,7 +39,7 @@ public final class DisplayRefreshRateController {
     private final Object mConfigLock = new Object();
     private final Object mListenerLock = new Object();
 
-    private crDroidSystemExService mSystemExService;
+    private AlphaSystemExService mSystemExService;
 
     private static class InstanceHolder {
         private static DisplayRefreshRateController INSTANCE = new DisplayRefreshRateController();
@@ -235,7 +235,7 @@ public final class DisplayRefreshRateController {
         mHandler = new Handler(mServiceThread.getLooper());
     }
 
-    public void initSystemExService(crDroidSystemExService service) {
+    public void initSystemExService(AlphaSystemExService service) {
         mSystemExService = service;
         mSystemExService.publishBinderService(REFRESH_RATE_MANAGER_SERVICE, new RefreshRateManagerService());
     }

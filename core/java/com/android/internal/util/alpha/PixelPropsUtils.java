@@ -57,6 +57,7 @@ public final class PixelPropsUtils {
     private static final String DATA_FILE = "gms_certified_props.json";
 
     private static final String SPOOF_PIXEL_PI = "persist.sys.pixelprops.pi";
+    private static final String SPOOF_PIXEL_GMS_CERT_CHAIN = "persist.sys.pixelprops.gmscertchain";
     private static final String SPOOF_PIXEL_GAMES = "persist.sys.pixelprops.games";
     private static final String SPOOF_PIXEL_GPHOTOS = "persist.sys.pixelprops.gphotos";
     private static final String SPOOF_PIXEL_NETFLIX = "persist.sys.pixelprops.netflix";
@@ -437,8 +438,10 @@ public final class PixelPropsUtils {
     public static void onEngineGetCertificateChain() {
         if (!SystemProperties.getBoolean(SPOOF_PIXEL_PI, true))
             return;
-        if (isKeyboxXmlPresent()) {
-            if (DEBUG) Log.d(TAG, "KEYBOX_DATA present; not blocking attestation");
+        // If a keybox is found, don't block key attestation
+        if (SystemProperties.getBoolean(SPOOF_PIXEL_GMS_CERT_CHAIN, false)
+                && KeyProviderManager.isKeyboxAvailable()) {
+            Log.i(TAG, "Key attestation blocking is disabled because a keybox is defined to spoof");
             return;
         }
         // Check stack for SafetyNet or Play Integrity
