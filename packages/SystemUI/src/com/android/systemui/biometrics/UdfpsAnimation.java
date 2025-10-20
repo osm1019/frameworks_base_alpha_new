@@ -250,14 +250,13 @@ public class UdfpsAnimation extends ImageView {
     public void hide() {
         if (mIsKeyguard && isAnimationEnabled()) {
             if (recognizingAnim != null) {
+                clearAnimation();
                 recognizingAnim.stop();
                 recognizingAnim.selectDrawable(0);
-                clearAnimation();
             }
-            mWindowManager.removeView(this);
-            mShowing = false;
-        } catch (RuntimeException e) {
-            Log.e(LOG_TAG, "Error removing view from WindowManager", e);
+            if (getWindowToken() != null) {
+                mWindowManager.removeView(this);
+            }
         }
     }
 
