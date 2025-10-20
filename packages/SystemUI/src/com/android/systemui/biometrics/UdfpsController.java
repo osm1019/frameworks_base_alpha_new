@@ -730,7 +730,6 @@ public class UdfpsController implements DozeReceiver, Dumpable {
                         data.getTime(),
                         data.getGestureStart(),
                         mStatusBarStateController.isDozing());
-                hideUdfpsAnimation();
                 break;
 
             default:
