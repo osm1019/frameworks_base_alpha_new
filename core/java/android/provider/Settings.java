@@ -14888,6 +14888,104 @@ public final class Settings {
         public static final String KEYBOX_DATA = "keybox_data";
 
         /**
+
+         * Whether to allow swipe down on lockscreen to view Quick Panel
+         * @hide
+         */
+        public static final String ENABLE_LOCKSCREEN_QUICK_SETTINGS = "enable_lockscreen_quick_settings";
+
+        /**
+         * Pulse lockscreen music visualizer
+         * @hide
+         */
+        public static final String LOCKSCREEN_PULSE_ENABLED = "lockscreen_pulse_enabled";
+
+        /**
+         * Pulse lockscreen music visualizer on ambient display
+         * @hide
+         */
+        public static final String AMBIENT_PULSE_ENABLED = "ambient_pulse_enabled";
+
+        /**
+         * @hide
+         */
+        public static final String PULSE_BAR_COUNT = "pulse_bar_count";
+
+        /**
+         * @hide
+         */
+        public static final String PULSE_ROUNDED_BARS = "pulse_rounded_bars";
+
+        /**
+         * @hide
+         */
+        public static final String PULSE_COLOR = "pulse_color";
+
+        /**
+         * @hide
+         */
+        public static final String PULSE_RENDERER = "pulse_renderer";
+
+        /**
+         * Translucent notifications
+         * @hide
+         */
+        public static final String NOTIFICATION_ROW_TRANSPARENCY = "notification_row_transparency";
+
+        /**
+         * Translucent lockscreen notifications
+         * @hide
+         */
+        public static final String NOTIFICATION_ROW_TRANSPARENCY_LOCKSCREEN = "notification_row_transparency_lockscreen";
+
+        /**
+         * Whether to pulse ambient on new music tracks
+         * @hide
+         */
+        public static final String PULSE_ON_NEW_TRACKS = "pulse_on_new_tracks";
+
+        /**
+         * Whether to show media squiggle animation
+         * @hide
+         */
+        public static final String MEDIA_SQUIGGLE_ANIMATION = "media_squiggle_animation";
+
+        /**
+         * Whether to use PIF spoof for google apps
+         * @hide
+         */
+        @Readable
+        public static final String PI_ENABLE_SPOOF = "pi_enable_spoof";
+
+        /**
+         * Whether to disable GMS cert chain with custom keybox
+         * @hide
+         */
+        @Readable
+        public static final String PI_GMS_CERT_CHAIN = "pi_gms_cert_chain";
+
+        /**
+         * Whether to use PIF spoof for games
+         * @hide
+         */
+        @Readable
+        public static final String PI_GAMES_SPOOF = "pi_games_spoof";
+
+        /**
+         * Whether to use PIF spoof for photos
+         * @hide
+         */
+        @Readable
+        public static final String PI_PHOTOS_SPOOF = "pi_photos_spoof";
+
+        /**
+         * Whether to use PIF spoof for netflix
+         * @hide
+         */
+        @Readable
+        public static final String PI_NETFLIX_SPOOF = "pi_netflix_spoof";
+
+        /**
          * Keys we no longer back up under the current schema, but want to continue to
          * process when restoring historical backup datasets.
          *
