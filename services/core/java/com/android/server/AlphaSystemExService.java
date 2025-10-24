@@ -38,9 +38,9 @@ import java.util.List;
 
 import com.android.server.DisplayRefreshRateController;
 
-public class crDroidSystemExService extends SystemService {
+public class AlphaSystemExService extends SystemService {
 
-    private static final String TAG = "crDroidSystemExService";
+    private static final String TAG = "AlphaSystemExService";
 
     private final ContentResolver mResolver;
 
@@ -54,7 +54,7 @@ public class crDroidSystemExService extends SystemService {
     private PackageRemovedListener mPackageRemovedListener;
     private ScreenStateListener mScreenStateListener;
 
-    public crDroidSystemExService(Context context) {
+    public AlphaSystemExService(Context context) {
         super(context);
         mResolver = context.getContentResolver();
     }
@@ -188,7 +188,7 @@ public class crDroidSystemExService extends SystemService {
                 return;
             }
 
-            crDroidSystemExService.this.onPackageRemoved(packageName);
+            AlphaSystemExService.this.onPackageRemoved(packageName);
         }
 
         @Override
